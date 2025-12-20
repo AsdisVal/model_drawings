@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Model Drawings — Sessions</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Model Drawings</h1>
+      <p>Organized by session — click a session to open it.</p>
+    </header>
+
+    <main class="wrap">
+      <!-- SESSION 1 -->
+      <section class="session" onclick="toggleSession(this)">
+        <div class="session-header">
+          <h2 class="session-title">#x númer</h2>
+          <div class="session-meta">
+            <span>22-nov-2025</span>
+            <span class="chev">›</span>
+          </div>
+        </div>
+
+        <div class="session-body">
+          <div class="gallery">
+            <div class="card">
+              <img src="/2025/nov/10m_b_har.jpg" alt="Session 01 drawing 01" />
+              <div class="info">
+                <h3>Gesture 01</h3>
+                <span>10 min · Blýantur</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="/2025/nov/10m_b_liggjandi.jpg"
+                alt="Session 01 drawing 02"
+              />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>10 min · Blýantur</span>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="/2025/nov/15m_b_hugsi.jpg"
+                alt="Session 01 drawing 02"
+              />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>15 min · Blýantur</span>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="/2025/nov/15m_b_liggjandi.jpg"
+                alt="Session 01 drawing 02"
+              />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>15 min · Blýantur</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="/2025/nov/15m_b_nidur.jpg"
+                alt="Session 01 drawing 02"
+              />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>15 min · Blýantur</span>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/2025/nov/15m_b_stol.jpg" alt="Session 01 drawing 02" />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>15 min · Blýantur</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="/2025/nov/15min_fb_rb.jpg"
+                alt="Session 01 drawing 02"
+              />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>15 min · Rauður og blár litur</span>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/2025/nov/15m_b_ble.jpg" alt="Session 01 drawing 02" />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>15 min · Rauður og blár litur</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SESSION 2 -->
+      <section class="session" onclick="toggleSession(this)">
+        <div class="session-header">
+          <h2 class="session-title">#x númer</h2>
+          <div class="session-meta">
+            <span>6-des-2025</span>
+            <span class="chev">›</span>
+          </div>
+        </div>
+
+        <div class="session-body">
+          <div class="gallery">
+            <div class="card">
+              <img src="/2025/des/10m_k.jpg" alt="Session 01 drawing 02" />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>10 min · Kol</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="/2025/des/10m_k_situr.jpg"
+                alt="Session 01 drawing 02"
+              />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>10 min · Kol</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="/2025/des/15m_fb_k.jpg" alt="Session 01 drawing 02" />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>15 min · Kol</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="/2025/des/15m_k.jpg" alt="Session 01 drawing 02" />
+              <div class="info">
+                <h3>Gesture 02</h3>
+                <span>15 min · Kol</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function toggleSession(el) {
+        el.classList.toggle('open');
+      }
+    </script>
+  </body>
+</html>
