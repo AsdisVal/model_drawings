@@ -1,0 +1,110 @@
+const SESSIONS = [
+  {
+    title: '#1',
+    date: '22-nov-2025',
+    dir: '2025/nov', // folder inside /public
+    defaultMedium: 'Blýantur',
+  },
+  {
+    title: '#2',
+    date: '6-des-2025',
+    dir: '2025/des',
+    defaultMedium: 'Kol',
+  },
+];
+
+function inferInfoFromFilename(url, fallbackMedium) {
+  const file = url.split('/').pop() || '';
+  const name = file.replace(/\.[^.]+$/, '');
+
+  // minutes from prefix: 10m_, 15m_, 15min_
+  let minutes = null;
+  const mm = name.match(/^(\d+)(m|min)_/i);
+  if (mm) minutes = `${mm[1]} min`;
+
+  // medium from tokens (edit these to match your naming)
+  let medium = fallbackMedium || '';
+  if (name.includes('_k')) medium = 'Kol';
+  if (name.includes('_b')) medium = 'Blýantur';
+  if (name.includes('_rb')) medium = 'Rauður og blár litur';
+
+  return { minutes, medium };
+}
+
+async function fetchImages(dir) {
+  const res = await fetch(`/api/list?dir=${encodeURIComponent(dir)}`);
+  if (!res.ok) throw new Error('Could not list folder');
+  const data = await res.json();
+  return data.files || [];
+}
+
+function cardHTML({ src, idx, date, defaultMedium }) {
+  const { minutes, medium } = inferInfoFromFilename(src, defaultMedium);
+
+  const subtitle =
+    minutes && medium ? `${minutes} · ${medium}` : minutes || medium || '';
+
+  const title = `Gesture ${String(idx + 1).padStart(2, '0')}`;
+
+  return `
+    <div class="card">
+      <img src="${src}" alt="Drawing ${idx + 1} (${date})" loading="lazy" />
+      <div class="info">
+        <h3>${title}</h3>
+        <span>${subtitle}</span>
+      </div>
+    </div>
+  `;
+}
+
+function sessionHTML({ title, date, cards }) {
+  return `
+    <section class="session" onclick="toggleSession(this)">
+      <div class="session-header">
+        <h2 class="session-title">${title}</h2>
+        <div class="session-meta">
+          <span>${date}</span>
+          <span class="chev">›</span>
+        </div>
+      </div>
+
+      <div class="session-body">
+        <div class="gallery">
+          ${cards}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+async function render() {
+  const root = document.getElementById('sessions');
+  root.innerHTML = '';
+
+  for (const s of SESSIONS) {
+    let files = [];
+    try {
+      files = await fetchImages(s.dir);
+    } catch (e) {
+      files = [];
+    }
+
+    const cards =
+      files.length === 0
+        ? `<p style="opacity:.7;padding:12px;">No images found in <code>/${s.dir}</code></p>`
+        : files
+            .map((src, idx) =>
+              cardHTML({
+                src,
+                idx,
+                date: s.date,
+                defaultMedium: s.defaultMedium,
+              })
+            )
+            .join('');
+
+    root.insertAdjacentHTML('beforeend', sessionHTML({ ...s, cards }));
+  }
+}
+
+render();
