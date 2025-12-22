@@ -1,14 +1,26 @@
 const SESSIONS = [
   {
     title: '#1',
-    date: '22-nov-2025',
-    dir: '2025/nov', // folder inside /public
+    date: '8-jan-2026',
+    dir: '2025/jan/8',
     defaultMedium: 'Blýantur',
   },
   {
     title: '#2',
+    date: '15-jan-2026',
+    dir: '2025/jan/15',
+    defaultMedium: 'Kol',
+  },
+  {
+    title: '#3',
+    date: '22-nov-2025',
+    dir: '2025/nov/22', // folder inside /public
+    defaultMedium: 'Blýantur',
+  },
+  {
+    title: '#4',
     date: '6-des-2025',
-    dir: '2025/des',
+    dir: '2025/des/6',
     defaultMedium: 'Kol',
   },
 ];
