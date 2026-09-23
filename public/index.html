@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="is">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Model Drawings — Sessions</title>
+
     <link rel="stylesheet" href="styles.css" />
     <script src="gallery.js" defer></script>
   </head>
@@ -11,16 +12,16 @@
   <body>
     <header>
       <h1>Model Drawings</h1>
-      <p>Organized by session — click a session to open it.</p>
+      <p>Organized by session. Click a session to open it.</p>
     </header>
 
-    <!-- JS will generate everything side here -->
     <main class="wrap" id="sessions"></main>
 
     <script>
       function toggleSession(el) {
         el.classList.toggle('open');
       }
+
       window.toggleSession = toggleSession;
     </script>
   </body>

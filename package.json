@@ -1,10 +1,7 @@
 {
   "name": "model-drawings-gallery",
   "type": "module",
-  "dependencies": {
-    "express": "^4.19.2"
-  },
   "scripts": {
-    "dev": "node server.js"
+    "dev": "npx serve public"
   }
 }

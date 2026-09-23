@@ -1,0 +1,73 @@
+{
+  "sessions": [
+    {
+      "title": "#1",
+      "date": "8-jan-2026",
+      "medium": "Blýantur",
+      "entries": [
+        {
+          "image": "/2025/jan/8/01_20min_löngSeta_zoomhalldor_timi-1.jfif",
+          "minutes": 20,
+          "comment": "Þetta var fyrsta teikningin mín í tímanum og mér fannst ótrúlega erfitt að gera þetta. Svo stuttar strokur."
+        },
+        {
+          "image": "/2025/jan/8/02_kennsla_halldor_timi_1.jfif",
+          "comment": "Halldór að kenna mér hvernig á að gefa þrívídd í módelið."
+        },
+        {
+          "image": "/2025/jan/8/03_10min_a_halldor_timi-1.jfif",
+          "minutes": 10,
+          "comment": ""
+        },
+        {
+          "image": "/2025/jan/8/04_10min_b_halldor_timi-1.jfif",
+          "minutes": 10,
+          "comment": ""
+        },
+        {
+          "image": "/2025/jan/8/05_10min_zoom_halldor_timi-1.jfif",
+          "minutes": 10,
+          "type": "löng seta",
+          "comment": ""
+        },
+        {
+          "image": "/2025/jan/8/06_20min_löngSeta_halldor_timi-1.jfif",
+          "minutes": 20,
+          "type": "löng seta",
+          "comment": ""
+        },
+        {
+          "image": "/2025/jan/8/08_15min_hradateikning_halldor_timi-1.jfif",
+          "minutes": 15,
+          "type": "hröð teikning",
+          "comment": ""
+        },
+        {
+          "image": "/2025/jan/8/09_15min_hradateikning_halldor_timi-1.jfif",
+          "minutes": 15,
+          "type": "hröð teikning",
+          "comment": ""
+        },
+        {
+          "image": "/2025/jan/8/10_15min_hradateikning_zoom1_halldor_timi-1.jfif",
+          "minutes": 15,
+          "type": "hröð teikning",
+          "comment": ""
+        },
+        {
+          "image": "/2025/jan/8/15min_hradateikning_zoom1_halldor_timi-1.jfif",
+          "minutes": 15,
+          "type": "hröð teikning",
+          "comment": ""
+        }
+      ]
+    },
+
+    {
+      "title": "#2",
+      "date": "15-jan-2026",
+      "medium": "Kol",
+      "entries": []
+    }
+  ]
+}
