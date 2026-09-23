@@ -110,27 +110,27 @@ function cardHTML({ src, idx, date, defaultMedium }) {
   const comment = COMMENTS[src]?.comment || '';
 
   return `
-    <div class="card">
+  <div class="card">
+    <img
+      src="${src}"
+      alt="${title}"
+      class="card-img"
+    />
+    <div class="card-info">
+      <h3>${title}</h3>
+      <span>${subtitle}</span>
 
-      ${src}"
-        loading="lazy"
-      />
-
-      <div class="info">
-        <h3>${title}</h3>
-        <span>${subtitle}</span>
-
-        <textarea
-          class="comment-box"
-          data-image="${src}"
-          placeholder="Athugasemd..."
-          onclick="event.stopPropagation()"
-          onblur="saveComment('${src}')"
-        >${comment}</textarea>
-      </div>
-
+      <textarea
+        class="comment-box"
+        data-image="${src}"
+        placeholder="Athugasemd..."
+        onclick="event.stopPropagation()"
+        onblur="saveComment('${src}')"
+      >${comment}</textarea>
     </div>
-  `;
+
+  </div>
+`;
 }
 
 function sessionHTML({ title, date, cards }) {
