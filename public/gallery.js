@@ -16,13 +16,12 @@ function cardHTML(entry, idx, medium) {
       <img
         src="${entry.image}"
         alt="Gesture ${idx + 1}"
-        class="card-img"
-      />
-      <h3>
-        Gesture ${String(idx + 1).padStart(2, '0')}
-      </h3>
+        classtring(idx + 1).padStart(2, '0')}
+        </h3>
 
         <span>${subtitle}</span>
+
+        ${entry.type ? `<span class="drawing-type">${entry.type}</span>` : ''}
 
         ${entry.comment ? `<p class="comment">${entry.comment}</p>` : ''}
       </div>
@@ -32,11 +31,12 @@ function cardHTML(entry, idx, medium) {
 
 function sessionHTML({ title, date, cards }) {
   return `
-    <section
-      class="session"
-      onclick="toggleSession(this)"
-    >
-      <div class="session-header">
+    <section class="session">
+
+      <div
+        class="session-header"
+        onclick="toggleSession(this.parentElement)"
+      >
         <h2 class="session-title">
           ${title}
         </h2>
@@ -52,6 +52,7 @@ function sessionHTML({ title, date, cards }) {
           ${cards}
         </div>
       </div>
+
     </section>
   `;
 }
@@ -67,7 +68,7 @@ async function render() {
     const cards =
       session.entries.length === 0
         ? `
-          <p style="opacity:.7;padding:12px;">
+          <p style="opacity:.7; padding:12px;">
             No drawings yet.
           </p>
         `

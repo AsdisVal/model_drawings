@@ -157,3 +157,17 @@ header p {
     padding: 0.65rem;
   }
 }
+
+.card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.drawing-type {
+  display: block;
+  margin-top: 4px;
+  color: #999;
+  font-size: 0.8rem;
+  font-style: italic;
+}
